@@ -6,8 +6,6 @@ import org.springframework.stereotype.Component;
 import com.monolitica.crud.domain.entities.Usuario;
 import com.monolitica.crud.dto.UsuarioDTO;
 
-import java.sql.Date;
-
 @Component
 public class UsuarioMapper implements CustomMapper<UsuarioDTO, Usuario>{
 

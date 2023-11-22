@@ -28,7 +28,7 @@ public class UsuarioRol {
     @Column (name = "created_at", columnDefinition = "TIMESTAMP")
     private LocalDateTime createdAt;
 
-    @JsonIgnore
+    //@JsonIgnore
     @ManyToOne (fetch = FetchType.LAZY)
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;

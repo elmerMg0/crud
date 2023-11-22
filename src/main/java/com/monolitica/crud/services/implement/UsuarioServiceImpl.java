@@ -47,7 +47,6 @@ public class UsuarioServiceImpl implements UsuarioService  {
     @Override
     public UsuarioDTO save(UsuarioDTO dto){
         Usuario usuario = usuarioRepository.save(usuarioMapper.toEntity(dto));
-        Integer.parseInt(usuario.getEmail());
         if(dto.getUsuarioDetailDTO() != null){
 
         usuarioDetailRepository.save(new UsuarioDetail(dto.getUsuarioDetailDTO().getFirstName(),
