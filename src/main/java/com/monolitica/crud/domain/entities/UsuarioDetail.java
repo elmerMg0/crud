@@ -2,9 +2,7 @@ package com.monolitica.crud.domain.entities;
 
 import java.sql.Date;
 
-import com.monolitica.crud.dto.UsuarioDTO;
 import com.monolitica.crud.dto.UsuarioDetailDTO;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

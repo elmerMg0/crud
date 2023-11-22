@@ -1,28 +1,28 @@
 package com.monolitica.crud.dto;
 
 import java.io.Serializable;
-import java.sql.Date;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 public class UsuarioDTO implements Serializable {
     private static final long serialVersionUID = 3234234545454L;
 
     private Integer id;
+
+    @NotNull()
+    @Size(min = 5, max = 10)
     private String username;
+
+    
     private String password;
 
+    @Email( message = "Invalid email")
     private String email;
 
 
     private UsuarioDetailDTO usuarioDetailDTO;
-
-//    private String firstName;
-//    private String lastName;
-//
-//    private Integer age;
-//
-//    private Date birthdate;
-
-
 
     private String created_at;
 
@@ -65,38 +65,6 @@ public class UsuarioDTO implements Serializable {
     public void setCreated_at(String created_at) {
         this.created_at = created_at;
     }
-
-//    public String getFirstName() {
-//        return firstName;
-//    }
-//
-//    public void setFirstName(String firstName) {
-//        this.firstName = firstName;
-//    }
-//
-//    public String getLastName() {
-//        return lastName;
-//    }
-//
-//    public void setLastName(String lastName) {
-//        this.lastName = lastName;
-//    }
-//
-//    public Integer getAge() {
-//        return age;
-//    }
-//
-//    public void setAge(Integer age) {
-//        this.age = age;
-//    }
-//
-//    public Date getBirthdate() {
-//        return birthdate;
-//    }
-//
-//    public void setBirthdate(Date birthdate) {
-//        this.birthdate = birthdate;
-//    }
 
     public UsuarioDetailDTO getUsuarioDetailDTO (){
         return usuarioDetailDTO;
