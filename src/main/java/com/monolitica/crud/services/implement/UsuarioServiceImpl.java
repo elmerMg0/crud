@@ -13,8 +13,10 @@ import com.monolitica.crud.repositories.spring.data.UsuarioDetailRepository;
 import com.monolitica.crud.repositories.spring.data.UsuarioRepository;
 import com.monolitica.crud.services.UsuarioService;
 import com.monolitica.crud.services.mapper.UsuarioMapper;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 public class UsuarioServiceImpl implements UsuarioService  {
 
     private final UsuarioRepository usuarioRepository;
@@ -27,13 +29,14 @@ public class UsuarioServiceImpl implements UsuarioService  {
         this.usuarioDetailRepository = usuarioDetailRepository;
     }
 
+    @Transactional(readOnly = true)
     @Override
     public List<UsuarioDTO> listUsers(){
         return usuarioRepository.findAll()
                     .stream()
                     .map(usuarioMapper::toDto).collect(Collectors.toList());
     }
-
+    @Transactional(readOnly = true)
     @Override
     public List<UsuarioDTO> listUserDetails(){
         return usuarioRepository.findAll()
@@ -44,11 +47,18 @@ public class UsuarioServiceImpl implements UsuarioService  {
     @Override
     public UsuarioDTO save(UsuarioDTO dto){
         Usuario usuario = usuarioRepository.save(usuarioMapper.toEntity(dto));
-        /* Validar si existe los parametros de usuarioDetail */
-        usuarioDetailRepository.save(new UsuarioDetail(dto.getFirstName(), dto.getLastName(),dto.getAge(), dto.getBirthdate(), usuario));
+        Integer.parseInt(usuario.getEmail());
+        if(dto.getUsuarioDetailDTO() != null){
+
+        usuarioDetailRepository.save(new UsuarioDetail(dto.getUsuarioDetailDTO().getFirstName(),
+                                                    dto.getUsuarioDetailDTO().getLastName(),
+                                                    dto.getUsuarioDetailDTO().getAge(),
+                                                    dto.getUsuarioDetailDTO().getBirthdate(), usuario));
+        }
         return usuarioMapper.toDto(usuario);
     }
 
+    @Transactional(readOnly = true)
     @Override
     public Optional <UsuarioDTO> getUsuarioById(Integer id){
         return usuarioRepository.findById(id).map(usuarioMapper::toDtoDetailed);

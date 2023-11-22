@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.monolitica.crud.domain.entities.UsuarioRol;
 
 public interface UsuarioRolRepositoty extends JpaRepository<UsuarioRol, Integer> {
-    //List<UsuarioRol> findByRolId(Integer rolId);
+    List<UsuarioRol> findAllByUsuario_IdOrderById(Integer usuarioId);
 }

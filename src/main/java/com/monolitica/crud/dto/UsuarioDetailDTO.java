@@ -3,18 +3,16 @@ package com.monolitica.crud.dto;
 import java.sql.Date;
 
 public class UsuarioDetailDTO {
-    private static final long serialVersionUID = 3234234545454L;
+    private static final long serialVersionUID = 323422334545454L;
 
     private Integer id;
-    private String username;
-    private String password;
+    private String firstName;
+    private String lastName;
 
-    private String email;
-    
- 
+    private Integer age;
 
-    
-    private String created_at;
+    private Date birthdate;
+
 
 
     public Integer getId() {
@@ -25,35 +23,36 @@ public class UsuarioDetailDTO {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getPassword() {
-        return password;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getEmail() {
-        return email;
+    public Integer getAge() {
+        return age;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
-    public String getCreated_at() {
-        return created_at;
+    public Date getBirthdate() {
+        return birthdate;
     }
 
-    public void setCreated_at(String created_at) {
-        this.created_at = created_at;
+    public void setBirthdate(Date birthdate) {
+        this.birthdate = birthdate;
     }
+
 }

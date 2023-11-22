@@ -56,7 +56,7 @@ public class UsuarioController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<UsuarioDTO> editRol(@RequestBody final UsuarioDTO dto,
+    public ResponseEntity<UsuarioDTO> editUser(@RequestBody final UsuarioDTO dto,
                                                 @PathVariable final Integer id) throws URISyntaxException {
         if (dto.getId() == null) {
             throw new IllegalArgumentException("Invalid user id, null value");
