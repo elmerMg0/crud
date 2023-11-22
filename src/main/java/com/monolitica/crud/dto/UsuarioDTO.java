@@ -11,14 +11,16 @@ public class UsuarioDTO implements Serializable {
     private String password;
 
     private String email;
-    
 
-    private String firstName;
-    private String lastName;
 
-    private Integer age;
+    private UsuarioDetailDTO usuarioDetailDTO;
 
-    private Date birthdate;
+//    private String firstName;
+//    private String lastName;
+//
+//    private Integer age;
+//
+//    private Date birthdate;
 
 
 
@@ -64,37 +66,43 @@ public class UsuarioDTO implements Serializable {
         this.created_at = created_at;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
+//    public String getFirstName() {
+//        return firstName;
+//    }
+//
+//    public void setFirstName(String firstName) {
+//        this.firstName = firstName;
+//    }
+//
+//    public String getLastName() {
+//        return lastName;
+//    }
+//
+//    public void setLastName(String lastName) {
+//        this.lastName = lastName;
+//    }
+//
+//    public Integer getAge() {
+//        return age;
+//    }
+//
+//    public void setAge(Integer age) {
+//        this.age = age;
+//    }
+//
+//    public Date getBirthdate() {
+//        return birthdate;
+//    }
+//
+//    public void setBirthdate(Date birthdate) {
+//        this.birthdate = birthdate;
+//    }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public UsuarioDetailDTO getUsuarioDetailDTO (){
+        return usuarioDetailDTO;
     }
-
-    public String getLastName() {
-        return lastName;
+    public void setUsuarioDetailDTO (UsuarioDetailDTO usuarioDetailDTO){
+        this.usuarioDetailDTO = usuarioDetailDTO;
     }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public Date getBirthdate() {
-        return birthdate;
-    }
-
-    public void setBirthdate(Date birthdate) {
-        this.birthdate = birthdate;
-    }
-
 }
 

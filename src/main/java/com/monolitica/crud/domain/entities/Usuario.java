@@ -1,17 +1,9 @@
 package com.monolitica.crud.domain.entities;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.SequenceGenerator;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "usuario")
@@ -32,8 +24,7 @@ public class Usuario {
 
 
     @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private UsuarioDetail usuarioDetail; 
-
+    private UsuarioDetail usuarioDetail;
 
     public Usuario(String username, String password, String email, LocalDateTime createdAt) {
         this.username = username;
